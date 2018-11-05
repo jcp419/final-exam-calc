@@ -1,0 +1,47 @@
+// Given the user's quarter 1 and quarter 2 grades
+// the program will calculate the score needed on
+// the final exam in order to maintain a desired
+// grade. q1*0.4 + q2*0.4 + final*0.2 = semester grade
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    float q1,
+          q2,
+          final,
+          sem1,
+          q14,
+          q24,
+          sem18;
+    char exit;
+
+    cout << "This program will determine the grade you need to achieve on your final exam in order\n";
+    cout << "to keep your desired semester grade.\n";
+
+    cout << "\nEnter Quarter 1 Grade: ";
+    cin >> q1;
+    cout << "Enter Quarter 2 Grade: ";
+    cin >> q2;
+    cout << "Enter Desired Semester Grade: ";
+    cin >> sem1;
+
+    q14 = (q1 * 0.4);
+    q24 = (q2 * 0.4);
+
+    sem18 = (q14 + q24);
+
+    final = ((sem1 - sem18) / 0.2);
+
+    cout << fixed << showpoint << setprecision(2);
+    cout << "\nYou need to score " << final << " on the final exam in order to score " << sem1 << " for the semester." << endl;
+
+    cin.ignore();
+    cout << "\nPress Any Key to Continue . . . ";
+    cin.get(exit);
+
+    return 0;
+}
